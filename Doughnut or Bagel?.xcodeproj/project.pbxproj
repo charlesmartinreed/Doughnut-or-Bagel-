@@ -12,6 +12,7 @@
 		8C14F18F21E3DCAE00C82513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C14F18D21E3DCAE00C82513 /* Main.storyboard */; };
 		8C14F19121E3DCB000C82513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C14F19021E3DCB000C82513 /* Assets.xcassets */; };
 		8C14F19421E3DCB000C82513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C14F19221E3DCB000C82513 /* LaunchScreen.storyboard */; };
+		8C14F19C21E3DCE200C82513 /* BagelOrDoughnutClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C14F19B21E3DCE200C82513 /* BagelOrDoughnutClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8C14F19021E3DCB000C82513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C14F19321E3DCB000C82513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C14F19521E3DCB000C82513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C14F19B21E3DCE200C82513 /* BagelOrDoughnutClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BagelOrDoughnutClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		8C14F18821E3DCAE00C82513 /* Doughnut or Bagel? */ = {
 			isa = PBXGroup;
 			children = (
+				8C14F19B21E3DCE200C82513 /* BagelOrDoughnutClassifier.mlmodel */,
 				8C14F18921E3DCAE00C82513 /* AppDelegate.swift */,
 				8C14F18B21E3DCAE00C82513 /* ViewController.swift */,
 				8C14F18D21E3DCAE00C82513 /* Main.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				8C14F18C21E3DCAE00C82513 /* ViewController.swift in Sources */,
 				8C14F18A21E3DCAE00C82513 /* AppDelegate.swift in Sources */,
+				8C14F19C21E3DCE200C82513 /* BagelOrDoughnutClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
