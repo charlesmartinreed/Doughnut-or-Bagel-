@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        doughnutConfidenceLabel.text = "0%"
+        bageConfidenceLabel.text = "0%"
         picker.delegate = self
         
     }
@@ -40,8 +43,18 @@ class ViewController: UIViewController {
                     print(err.localizedDescription)
                 } else {
                     if let results = req.results as? [VNClassificationObservation] {
+                        
                         results.forEach({ (obs) in
-                            print("\(obs.identifier): \(obs.confidence * 100)%")
+                            switch obs.identifier {
+                            case "bagels":
+                                let resultRounded = Int((obs.confidence * 100).rounded())
+                                self.bageConfidenceLabel.text = "\(resultRounded)%"
+                            case "doughnuts":
+                                let resultRounded = Int((obs.confidence * 100).rounded())
+                                self.doughnutConfidenceLabel.text = "\(resultRounded)%"
+                            default:
+                                break
+                            }
                         })
                     }
                 }
