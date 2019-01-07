@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Vision
 
 class ViewController: UIViewController {
 
@@ -31,7 +32,26 @@ class ViewController: UIViewController {
     }
     
     func processImage(image: UIImage) {
-        print("processing image!")
+        //create a vision coreML model
+        if let model = try? VNCoreMLModel(for: BagelOrDoughnutClassifier().model) {
+            //make a request to that model to check out the image
+            let request = VNCoreMLRequest(model: model) { (req, err) in
+                if let err = err {
+                    print(err.localizedDescription)
+                } else {
+                    if let results = req.results as? [VNClassificationObservation] {
+                        results.forEach({ (obs) in
+                            print("\(obs.identifier): \(obs.confidence * 100)%")
+                        })
+                    }
+                }
+            }
+                if let imageData = image.jpegData(compressionQuality: 1.0) {
+                    //use the image with our request
+                    let handler = VNImageRequestHandler(data: imageData, options: [:])
+                    try? handler.perform([request])
+            }
+        }
     }
 }
 
